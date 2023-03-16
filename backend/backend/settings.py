@@ -78,7 +78,7 @@ WSGI_APPLICATION = "backend.wsgi.application"
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql",
-        "NAME": "web_geo_app",
+        "NAME": "web_inventory_app",
         "USER": "postgres",
         "PASSWORD": "09pq!_2x",
         "HOST": "127.0.0.1",
@@ -127,3 +127,5 @@ STATIC_URL = "static/"
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+AUTH_USER_MODEL = "app_core.User"
