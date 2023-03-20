@@ -20,13 +20,15 @@ from drf_spectacular.views import (
 from django.contrib import admin
 from django.urls import path, include
 
+URL = "test/web_inventory_app"
+
 urlpatterns = [
-    path("admin/", admin.site.urls),
-    path("api/schema/", SpectacularAPIView.as_view(), name="api_schema"),
+    path(f"{URL}/admin/", admin.site.urls),
+    path(f"{URL}/api/schema/", SpectacularAPIView.as_view(), name="api_schema"),
     path(
-        "api/docs/",
+        f"{URL}/api/docs/",
         SpectacularSwaggerView.as_view(url_name="api_schema"),
         name="api_docs",
     ),
-    path("api/user/", include("app_user.urls")),
+    path(f"{URL}/api/user/", include("app_user.urls")),
 ]
