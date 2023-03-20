@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 
 from pathlib import Path
+from .db_credentials import DbCredentials
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -80,12 +81,12 @@ WSGI_APPLICATION = "backend.wsgi.application"
 
 DATABASES = {
     "default": {
-        "ENGINE": "django.db.backends.postgresql",
-        "NAME": "web_inventory_app",
-        "USER": "postgres",
-        "PASSWORD": "09pq!_2x",
-        "HOST": "127.0.0.1",
-        "PORT": "5432",
+        "ENGINE": DbCredentials.ENGINE,
+        "NAME": DbCredentials.NAME,
+        "USER": DbCredentials.USER,
+        "PASSWORD": DbCredentials.PASSWORD,
+        "HOST": DbCredentials.HOST,
+        "PORT": DbCredentials.PORT,
     }
 }
 
