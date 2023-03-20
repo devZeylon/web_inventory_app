@@ -3,6 +3,8 @@
 
 superuser.txt
 backend/backend/db_credentials.py
+backend/web_inventory_app_static/
+web.config
 ### Django ###
 *.log
 *.pot
