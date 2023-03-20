@@ -27,6 +27,7 @@ DEBUG = True
 
 ALLOWED_HOSTS: list = [
     'https://digital.bjerking.se', 
+    'digital.bjerking.se',
     '127.0.0.1',
 ]
 
