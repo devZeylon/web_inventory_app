@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 
+import os
 from pathlib import Path
 from .db_credentials import DbCredentials
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -26,11 +27,13 @@ SECRET_KEY = "django-insecure-liek1^8kq=ntk$o4b5n%*!!n_pe3)a*t=40v&^dz+gx2^gk^8e
 DEBUG = True
 
 ALLOWED_HOSTS: list = [
-    'https://digital.bjerking.se', 
+    #'https://digital.bjerking.se', 
     'digital.bjerking.se',
-    '127.0.0.1',
+    #'127.0.0.1',
 ]
 
+#CSRF_TRUSTED_ORIGINS = ['https://digital.bjerking.se', 'digital.bjerking.se']
+CSRF_TRUSTED_ORIGINS = ['https://digital.bjerking.se']
 
 # Application definition
 
@@ -75,7 +78,6 @@ TEMPLATES = [
         },
     },
 ]
-
 WSGI_APPLICATION = "backend.wsgi.application"
 
 
@@ -128,7 +130,9 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
-STATIC_URL = "static/"
+URL = "test/web_inventory_app"
+STATIC_URL = f"/{URL}/web_inventory_app_static/"
+STATIC_ROOT = os.path.join(BASE_DIR, 'web_inventory_app_static')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
