@@ -81,12 +81,12 @@ WSGI_APPLICATION = "backend.wsgi.application"
 
 DATABASES = {
     "default": {
-        "ENGINE": DbCredentials.ENGINE,
-        "NAME": DbCredentials.NAME,
-        "USER": DbCredentials.USER,
-        "PASSWORD": DbCredentials.PASSWORD,
-        "HOST": DbCredentials.HOST,
-        "PORT": DbCredentials.PORT,
+        "ENGINE": DbCredentials.ENGINE.value,
+        "NAME": DbCredentials.NAME.value,
+        "USER": DbCredentials.USER.value,
+        "PASSWORD": DbCredentials.PASSWORD.value,
+        "HOST": DbCredentials.HOST.value,
+        "PORT": DbCredentials.PORT.value,
     }
 }
 
