@@ -31,4 +31,5 @@ urlpatterns = [
         name="api_docs",
     ),
     path(f"{URL}/api/user/", include("app_user.urls")),
+    path(f"{URL}/api/recipe/", include("app_recipe.api.urls")),
 ]
