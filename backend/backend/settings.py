@@ -133,8 +133,12 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
 URL = "test/web_inventory_app"
-STATIC_URL = f"/{URL}/web_inventory_app_static/"
+
+STATIC_URL = f"/{URL}static/static/"
+MEDIA_URL = f"/{URL}static/media/"
+
 STATIC_ROOT = os.path.join(BASE_DIR, "web_inventory_app_static")
+MEDIA_ROOT = os.path.join(BASE_DIR, "web_inventory_app_media")
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
@@ -145,4 +149,8 @@ AUTH_USER_MODEL = "app_core.User"
 
 REST_FRAMEWORK = {
     "DEFAULT_SCHEMA_CLASS": "drf_spectacular.openapi.AutoSchema",
+}
+
+SPECTACULAR_SETTINGS = {
+    "COMPONENT_SPLIT_REQUEST": True,
 }

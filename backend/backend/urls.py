@@ -19,6 +19,8 @@ from drf_spectacular.views import (
 )
 from django.contrib import admin
 from django.urls import path, include
+from django.conf.urls.static import static
+from django.conf import settings
 
 URL = "test/web_inventory_app"
 
@@ -33,3 +35,9 @@ urlpatterns = [
     path(f"{URL}/api/user/", include("app_user.urls")),
     path(f"{URL}/api/recipe/", include("app_recipe.api.urls")),
 ]
+
+if settings.DEBUG:
+    urlpatterns += static(
+        settings.MEDIA_URL,
+        document_root=settings.MEDIA_ROOT,
+    )
